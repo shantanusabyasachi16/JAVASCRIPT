@@ -57,3 +57,20 @@ const myfunction = function(){
 // function or object function
 
 // note typeof of every non primitive datatypes is an object
+
+
+
+//Stack memory and Heap memory
+
+//stack memory is primitive data types.In stack memory the variables we declare, we get a copy
+
+//and Heap memory is non primitive data types.In heap memory we get the original value or (reference) 
+  
+
+let myname = "shantanu"
+ 
+let anothername = myname
+anothername = "dugu"
+ console.log(myname);
+ console.log(anothername);
+
