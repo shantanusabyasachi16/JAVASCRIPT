@@ -72,5 +72,16 @@ let myname = "shantanu"
 let anothername = myname
 anothername = "dugu"
  console.log(myname);
- console.log(anothername);
+ console.log(anothername);   
+
+
+ let user1 =
+ {
+    email:"dugu@gmail.com"
+ }
+   
+ let user2 =user1
+ user2.email= "gudu@gmail.com"
+ console.log(user1.email);
+ console.log(user2.email);
 
