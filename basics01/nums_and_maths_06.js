@@ -41,3 +41,23 @@ console.log(Math.min(2,6,9));//2 is the minimum value...
 console.log( Math.max(456.4789,38990,9988));//38990 is the maximum  value...
 
 
+console.log( Math.random()); //It's value come only in between 0 and 1.
+
+ // so to get minimum of one value at left of the decimal we need to multiply it with 10 and add a 1
+  console.log((Math.random()*10)+1);
+ console.log((Math.random()*10)+1); // now it will give a number between 1 to 9 at the left side of the decimal number 
+
+ // And we can round up the number with the math.floor function or method() as we know it gives the lower value.
+ console.log(Math.floor((Math.random()*10)+1));
+ // Now it will give the value from 1 to 9
+
+
+// another way to use Math.random() with min and max range.
+
+const min = 10;
+const max = 20;
+
+console.log(Math.floor(Math.random() * (min - max +1)) + min);
+
+
+
