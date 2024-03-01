@@ -19,7 +19,14 @@ const myarray = [1,2,3,4,4,6,7 ]
   myarray.unshift(77) // [77,1,2,3,4,5,6,7]it adds the value  in starting of an array  which involves the shifting positions of every existing element.
   myarray.shift() //[1,2,3,4,5,6,7] it removes the 1st element
   
+   console.log(myarray.includes(4));// true, it is a questionnaire method which gives the output in boolean
+   console.log(myarray.indexOf(9));//-1 it doesnot exist so -1 will come.
+
+   const newarr = myarray.join()//  add all the elemnts  of an array into strings
 
   console.log(myarray);
+  console.log(newarr);//1,2,3,4,4,6,7 {typof newarr is (string)}
+   
+console.log(myarray);
 
   
