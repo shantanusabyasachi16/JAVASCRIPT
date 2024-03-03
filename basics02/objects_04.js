@@ -69,4 +69,23 @@ console.log(obje3);//{ '1': 'dugu', '2': 'gudu', '3': 'cuttack', '4': 'dhoni' }
 ]
 
 console.log(user[1].email);//gdg@gmail.com... we access those values like this...
+
+ 
+const mynew = new Object(
+   {
+       name:"virat",
+       age:36,
+       gender:"male"
+   }
+)
+console.log(Object.keys(mynew)); // [ 'name', 'age', 'gender' ]  (FOR keys)
+console.log(Object.values(mynew)); // [ 'virat', 36, 'male' ] (FOR values)
+
+// There is a another method where we can keep the keys with their values in an individual array in the whole array.
+
+console.log(Object.entries(mynew)); // [ [ 'name', 'virat' ], [ 'age', 36 ], [ 'gender', 'male' ] ]
+
+// There is anothere syntax where we can check whether a particular property or key is present in the object or not and the result comes in boolean.
+
+console.log(mynew.hasOwnProperty("isLogged"));// false
  
