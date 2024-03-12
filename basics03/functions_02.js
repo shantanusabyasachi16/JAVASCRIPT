@@ -39,3 +39,23 @@ function handelobj(anyobject){
 
 
  console.log(handelobj(user));//username is dugu and price is 3899
+
+ handelobj({
+    myname:"shantanu",
+    price: 4000
+ });//username is shantanu and price is 4000
+ 
+ //     how to pass arrays
+
+
+ const mynewarray =[200,400,600,700];
+
+ function newarray(getarray){
+  return getarray[3]
+
+ }
+ console.log(newarray(mynewarray));//700
+
+ console.log(newarray([200,400,500,700,800]));//700
+
+  
