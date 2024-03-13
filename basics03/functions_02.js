@@ -58,4 +58,12 @@ function handelobj(anyobject){
 
  console.log(newarray([200,400,500,700,800]));//700
 
+// Or we can declare the array while executing a function.
+
+function mynewarr2(getarray2){
+   console.log(`My grandapa age is ${getarray2[4]}`);
+}
+console.log(mynewarr2([46,56,89,90,65]));  // My grandapa age is 65
+
+
   
