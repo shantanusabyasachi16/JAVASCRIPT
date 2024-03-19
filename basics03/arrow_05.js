@@ -48,9 +48,9 @@ user.welcome()//gudu, welcome to website
      let username1="kkr"
     console.log(this.username1);
  }
- ipl()
- //if without declareing the variable i.e let var and const then......
- // her if we when you assign a value to a variable without using let, const, or var, 
+ ipl()//udefined
+ //if without declareing the variable i.e let var and const then...... without let or var
+ 
  //and if the variable is not found within the local scope, it implicitly becomes a property of the global object 
  //so it will execute this.username e.i (kkr) 
  // but if we will declare the variable  it will not execute...as inn function this keyword doesn't execute
