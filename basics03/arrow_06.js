@@ -7,13 +7,14 @@ const kkr= function(){
    console.log(this .user);
 }
 kkr()  //undefined as we know that in function "this" keyword doesnt't execute
+
 //but  inn arrow function(=>)
 const kkr1 = ()=>{
      let user1 ="ipl"
     console.log(this.user1);
-//console.log(this);//{} empty space but in function it will assign the values
+console.log(this);//{} empty space but in  regular function it will assign the values
 }
-//kkr1()// undefined it will not execute
+kkr1()// undefined it will not execute
 
 //core arrow function 
 
@@ -33,14 +34,14 @@ console.log(addtwonumber(2,3));//5
 //It is an arrow fucntion where "return" keyword is removed with the curly braces and paranthesis are used instead of them.
 
 
-//const addtwonumber1=(num1,num2) => num1+num2
+//const addtwonumber1=(num1,num2) => num1+num2 it is coorect but write this way-
 const addtwonumber1=(num1,num2) => (num1+num2)//12 
- //{}is used we have to use return keyword but () we don't
+ //{} is used we have to use return keyword....... but () we don't use return, () means return
 console.log(addtwonumber1(9,3));//12
 
 //() why we used?
 // because it can retrun values in an function weather we use () or return key word
-//but in object  we will return like this {}
+//but in object  we will return like this({})
 //for ex-
 const addtwonumber2=(num1,num2) => ({user23: "dugu"}) //we have to wrap like this
 
