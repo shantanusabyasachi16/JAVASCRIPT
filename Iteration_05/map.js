@@ -87,3 +87,14 @@ for (const [key ,value] of mymap) {
 /*in :- India
 UK :- United kingdom
 fr :-  france*/
+
+// if there is a object
+ const myobject={
+  game1: "NFS",
+  game2: "bgmi"
+ }
+  for (const [key , value] of myobject) {
+    console.log(key,':-', value);//TypeError: myobject is not iterable
+   
+    
+  }
