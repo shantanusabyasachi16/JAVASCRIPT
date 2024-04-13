@@ -24,6 +24,21 @@
   div.style.backgroundColor ="red"
 
   //how to attach the
+            // We can also style the created div
+ 
+ theDiv.style.backgroundColor = "yellow"
+ theDiv.style.padding = "20px"
+ //theDiv.style.innerText = "hello everyone"
+
+ // As you can see we cant see the div
+
+ // So the preferable way is instead of writing the innerText
+
+ const theText = document.createTextNode("hello everyone")
+
+ theDiv.appendChild(theText)
+
+ document.body.appendChild(theDiv)
  
 
     </script>
