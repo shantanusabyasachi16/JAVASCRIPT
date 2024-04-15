@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code</title>
+</head>
+<body style="background-color: black ;color:aliceblue;">
+    
+    <ul class="language">
+        <li>javascript</li>
+
+    </ul>
+    <!--how too add evalues-->
+    <script>
+function addlanguage(langname){
+     const li = document.createElement('li');
+     li.innerHTML = `${langname}`;
+     document.querySelector('.language').appendChild(li)
+     
+   
+}
+addlanguage("python")
+addlanguage("nextjs")
+
+
+  // In this way the document has to traversea lot in the dom tree for injecting one new element.
+    // Imagine if there is multiple or thousand of new element is required to be injected
+
+    // To do this opeartion more easily or in more optimizeable way we can use the below way
+//to write in large code we use this type becouse its doesnot traverse the tree
+function addoptimization(langname){
+    const li = document.createElement('li')
+    li.appendChild(document.createTextNode(langname))
+    document.querySelector('.language').appendChild(li)
+
+}
+addoptimization('golang')
+addoptimization('ruby')
+
+//how to edit the values
+//1st we have to select
+const seclang =document.querySelector('li:nth-child(3)')
+seclang.innerHTML ="php"
+
+// Now the optimized way
+//create element
+const newli =  document.createElement('li')
+newli.textContent = "mojo"
+
+seclang.replaceWith(newli)
+
+// Another way to edit
+
+const newli1 =  document.createElement("li:first-child")
+newli1.outerHTML =  '<li>typescript</li>'
+
+//how to remove
+const removelang = document.querySelector('li:last-child')
+removelang.remove()
+
+
+    </script>
+</body>
+</html>
