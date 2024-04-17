@@ -3,11 +3,12 @@ const body = document.querySelector("body")
 
 buttons.forEach(function(button){
 
-  console.log(button)
+ // console.log(button)
 
-  button.addEventListener('click',function(e){
+  button.addEventListener('click',function(e){ //This line adds an event listener to a button element. The event listener listens for a "click" event on the button. 
+    
 
-    console.log(e);
+    console.log(e); //"e" is event object
 
      // it shows about the event which is pointer event(mouse pointer)nand their prototypes as well.
     console.log(e.target)
@@ -31,6 +32,11 @@ buttons.forEach(function(button){
      if (e.target.id === 'yellow')
 
       body.style.backgroundColor = "green"
+      
+      if (e.target.id === 'purple')
+
+      body.style.backgroundColor = "purple"
+      
     
 
     //+++++++++++++   switch case  +++++++++++++
@@ -51,7 +57,15 @@ buttons.forEach(function(button){
 
       case "yellow":
       body.style.backgroundColor = "blue";
-      break;
+       break;
+         
+       case "purple":
+      body.style.backgroundColor = "purple";
+       break;
+     
+
+      default:
+        break;
 
      }
 
