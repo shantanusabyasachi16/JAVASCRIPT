@@ -1,0 +1,61 @@
+<!--EVENTS - Events in JavaScript are actions or occurrences that happen in the browser or within the document. 
+    They can be triggered by user interactions like clicking or typing, browser actions like page loading, or by JavaScript code itself.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Eventst</title>
+</head>
+<body style="background-color: black; color: red;">
+    <h2>Indian Monuments</h2>
+    <ul>
+        <li><img width="300" id="Tajmahal"  src="https://th.bing.com/th/id/OIP.2N7dUQUZXB4_ujP_AffyDQHaFj?w=213&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt=""></li>
+
+        <li><img width="300" id="Indiagate" src="https://th.bing.com/th/id/OIP.YbSfNrF-GgygmzUAkCkhigHaFG?w=195&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" ></li>
+
+        <li><img width="300" id="Qutbminar" src="https://th.bing.com/th/id/OIP.ToqpZio4oY4ajuWl96sjGQHaE7?w=357&h=194&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt=""></li>
+
+        <li><img width="300" id="Gatewayofindia" src="https://th.bing.com/th/id/OIP.P6_gl3RkFq-UDWAPZ7Fj8QHaFc?w=225&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt=""></li>
+
+        <li><img width="300" id="Gatewayofindia" src="https://th.bing.com/th/id/OIP.LdC9HIpGoh8EnUh0jjdSzgHaE2?w=269&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" onclick="alert('Gatewayofindia')"> </li>
+
+         <li> <a style="color: red;" href="https://www.google.co.in/" id="google">google</a></li>
+  
+  </body> 
+<script>
+
+        // As we know javascript is a sequential running language. Every sequence is run after another sequence.
+
+    //some events happen on the browser which are evoked after any kind of activity.
+
+    //These activity is known as the events.
+
+    //The activity can be of many types as mouse hovering, mouse clicked, double clicked, keyboard's value clicked, drag and drop, etc.
+   
+    //1st approach
+
+     //Writing onclick="" in an html tag itself  for a click event may not be a very good approach when the scale is large.
+    // <li><img width="300" id="Gatewayofindia" src="https://th.bing.com/th/id/OIP.LdC9HIpGoh8EnUh0jjdSzgHaE2?w=269&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" onclick="alert('Gatewayofindia')"> </li>
+    
+     //it is not recommended
+
+     //2nd approach
+
+document.getElementById('Indiagate').onclick= function(){
+    alert('Indiagate clicked')
+}  // This approach can also be accepted but the event listener features not only provides the click events but also different events.
+ 
+//3rd and best approach
+  // and with event listener () we give the type of event and another parameter as false which is by default.
+
+document.getElementById('Indiagate').addEventListener('click', function(e){
+    alert('Indiagate clicked again ')
+})
+
+         //+++++++++++++++++ EVENT OBJECTS++++++++++++++++++++++//
+
+         
+</script>
+
+</html>
