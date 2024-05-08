@@ -53,7 +53,7 @@ document.getElementById('Indiagate').addEventListener('click', function(e){
    //alert('Indiagate clicked again ')
    console.log(e);
    
-
+},false)
 
          //+++++++++++++++++ EVENT OBJECTS++++++++++++++++++++++//
 
@@ -118,7 +118,7 @@ console.log(e.clientY);
  //event propagation is managed through a mechanism called the Event Model, which encompasses two main phases: capturing and bubbling.
 
 //1.Event bubbling- (BUTTOM TO TOP)
-)
+
 //In this method, the event starts at the target element and bubbles up through its ancestors. This is the default behavior for most events in browsers.
 // bubbles event property returns true if an event is a bubbling event.
 
@@ -126,16 +126,16 @@ console.log(e.clientY);
 
 //example =
 
-//document.getElementById("image").addEventListener('click',function(e){
-   // console.log("clicked inside  the ul");//clicked inside  the ul
-//},false)//it will print when we click inside the image i.e ul
+document.getElementById("image").addEventListener('click',function(e){
+    console.log("clicked inside  the ul");//clicked inside  the ul
+},false)//it will print when we click inside the image i.e ul
 
 
-//document.getElementById("Indiagate").addEventListener('click',function(e){
-   // console.log("Indiagate clicked"); //it will print when we wiil click owl
+document.getElementById("Indiagate").addEventListener('click',function(e){
+    console.log("Indiagate clicked"); //it will print when we wiil click owl
     //Indiagate clicked-1st
     //clicked inside  the ul-2nd
-//},false)
+},false)
 
 // As we know the "images" id is the parent of the "owl" id.
     //If we click on the owl image (with the false parameter or no parameter), first it targets the child then the parent.
@@ -154,7 +154,7 @@ console.log(e.clientY);
 
     document.getElementById("image").addEventListener('click',function(e){
     console.log("clicked inside  the ul");//clicked inside  the ul
-},true)
+   },true)
 
 document.getElementById("Indiagate").addEventListener('click',function(e){
     console.log("Indiagate clicked"); //it will print when we wiil click owl
@@ -162,9 +162,18 @@ document.getElementById("Indiagate").addEventListener('click',function(e){
     //clicked inside  the ul -1st
     //Indiagate clicked -2nd
 
-},true)
+    },true)
+
+
+//prevent default
+document.getElementById('google').addEventListener('click',function(e){
+    e.preventDefault();//the link wil be ivalid
+    console.log("google clicked ");
+
+})
     
 </script>
 
 </html>-
+
 
