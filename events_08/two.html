@@ -21,42 +21,28 @@
    <script>
 
     document.querySelector('#images').addEventListener('click',function(e){
-      //console.log(e);
+      console.log(e);
       console.log(e.target.parentNode); //parentNode is used becauseth image is inside the  li tag
     let removeIt = e.target.parentNode
     removeIt.remove()
 
      //There is another because if there are multiple types of HTML tags are being children of one parent node
     
+     removeIt.parentNode.removeChild(removeIt)
+
+     })
+
      
-    
-  })
+    // if we don't want to remove every tag of the same parent while getting clicked. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   </script>
+    document.querySelector('#images').addEventListener('click',function(e){
+       console.log(e.target.tagName);
+       if (e.target.tagName==='IMG') {
+    let removeIt = e.target.parentNode
+  removeIt.remove()
+  
+}
+ })
+</script>
 </body>
 </html>
