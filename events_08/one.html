@@ -9,7 +9,7 @@
 </head>
 <body style="background-color: black; color: red;">
     <h2>Indian Monuments</h2>
-    <ul>
+    <ul id="image">
         <li><img width="300" id="Tajmahal"  src="https://th.bing.com/th/id/OIP.2N7dUQUZXB4_ujP_AffyDQHaFj?w=213&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt=""></li>
 
         <li><img width="300" id="Indiagate" src="https://th.bing.com/th/id/OIP.YbSfNrF-GgygmzUAkCkhigHaFG?w=195&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" ></li>
@@ -88,7 +88,83 @@ document.getElementById('Indiagate').addEventListener('click', function(e){
 console.log(e.currentTarget);
 //// the currentTarget property returns the element whose event listener triggered the event.
     
-    },false)
+//e.clientX
+
+console.log(e.clientX);
+//The clientX property returns the horizontal client coordinate of the mouse pointer when a mouse event occurs.
+//The clientX property is read-only.
+//The client area is the current window.
+
+//clientY
+console.log(e.clientY);
+//The clientY property returns the vertical client coordinate of the mouse pointer when a mouse event occurs.
+//The clientY property is read-only.
+//The client area is the current window.
+
+
+//screenX
+ console.log(e.screenX);
+
+ //The screenX property returns the horizontal screen coordinate of the mouse pointer when a mouse event is triggered.
+
+ //screenY
+ console.log(e.screenY);
+ //The screenY property returns the vertical screen coordinate of the mouse pointer when a mouse event occurs.
+
+
+ // ..... ...........       Event propagation
+//... default value is always false
+
+ //event propagation is managed through a mechanism called the Event Model, which encompasses two main phases: capturing and bubbling.
+
+//1.Event bubbling- (BUTTOM TO TOP)
+)
+//In this method, the event starts at the target element and bubbles up through its ancestors. This is the default behavior for most events in browsers.
+// bubbles event property returns true if an event is a bubbling event.
+
+//Otherwise it returns false.
+
+//example =
+
+//document.getElementById("image").addEventListener('click',function(e){
+   // console.log("clicked inside  the ul");//clicked inside  the ul
+//},false)//it will print when we click inside the image i.e ul
+
+
+//document.getElementById("Indiagate").addEventListener('click',function(e){
+   // console.log("Indiagate clicked"); //it will print when we wiil click owl
+    //Indiagate clicked-1st
+    //clicked inside  the ul-2nd
+//},false)
+
+// As we know the "images" id is the parent of the "owl" id.
+    //If we click on the owl image (with the false parameter or no parameter), first it targets the child then the parent.
+    // It travels bottom to top in dom tree
+    // It is called as event bubbling.
+    
+
+///  Event capturing- (TOP TO BUTTOM)
+// In this method, the event starts at the outermost parent element and captures down to the target element before bubbling back up.
+
+// It first captures  the outermost element and propagates to the inner elements.
+    // It travels from top to bottom or from parents to children.
+    // with the true parameter mentioned
+
+    //example=
+
+    document.getElementById("image").addEventListener('click',function(e){
+    console.log("clicked inside  the ul");//clicked inside  the ul
+},true)
+
+document.getElementById("Indiagate").addEventListener('click',function(e){
+    console.log("Indiagate clicked"); //it will print when we wiil click owl
+    
+    //clicked inside  the ul -1st
+    //Indiagate clicked -2nd
+
+},true)
+    
 </script>
 
 </html>-
+
