@@ -1,0 +1,66 @@
+<!--"I will finish later!"
+
+Functions running in parallel with other functions are called asynchronous
+
+A good example is JavaScript setTimeout()
+
+Asynchronous code, often written using asynchronous programming techniques, allows programs to
+ perform tasks concurrently without blocking the execution of other code. This is particularly useful in
+  scenarios where tasks involve waiting for external resources like databases, network requests, or file I/O operations
+  , which would otherwise cause the program to stall while waiting for these operations to complete.-->
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Namaste</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    // setTimeOut() is method  but it calls a API .
+   //setTimeout() is an asynchronous function
+   //The global setTimeout() method sets a timer which executes a function or specified piece of code once the timer expires.
+    
+setTimeout(function(){
+    console.log("I wiil come after 5 seconds");
+},5000)
+
+   // but we can also give any refernce of a function as well
+
+   const myname = function(){
+        console.log("dugu");
+    }
+   
+   setTimeout(myname,3000)
+
+   // The difference between setInterval() and setTimeOut() is 
+   // 1. setInterval() executes the function repeatedly after the given interval of time.
+   // 2. But setTimeout() executes the function only once after give time.
+
+const changeh1 = function(){
+    document.querySelector("h1").innerHTML = "Pranammm"
+}
+//setTimeout(changeh1,4000)//
+ 
+
+  //how to stop that event
+
+  // There is a function clearTimeOut() to stop the setTimeOut()
+
+  //clearTimeout(changeh1)
+
+  // now use this on a button
+
+
+  const changeName = setTimeout(changeh1,4000)
+document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(changeName)
+    console.log("stopped");
+})
+
+</script>
+</html>
