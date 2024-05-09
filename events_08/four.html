@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 >Ami Kolkata </h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<!--Here this is composed of a start and a stop button.
+    //If we click the start it consoles the log with a msg continuously.
+    //While clicking the stop button it stops showing the message in the console.-->
+<script>
+   const mynew =function(){
+    console.log("dugu", Date.now());
+   }
+  const intervalid =setInterval(mynew,2000)
+  clearInterval(intervalid)
+
+
+
+  
+
+</script>
+</html>
