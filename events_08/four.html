@@ -20,9 +20,22 @@
   const intervalid =setInterval(mynew,2000)
   clearInterval(intervalid)
 
+ // example :
 
-
-  
+  const printmsg = function(){
+    console.log("ami kkr",Date.now());
+  }
+  const started = document.querySelector('#start')
+  started.addEventListener('click',function(){
+   stopmsg= setInterval(printmsg,2000)
+  })
+ 
+  const stopped = document.querySelector('#stop')
+  stopped.addEventListener('click',function(){
+   
+    clearInterval(stopmsg)
+    console.log("stopped");
+  })
 
 </script>
 </html>
