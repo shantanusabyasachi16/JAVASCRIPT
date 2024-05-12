@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+    <h1>Click Start to see multiple colored backgrounds.</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="stop2">Stop Here</button>
+</body>
+<script>
+
+ // For generating the random hexcoed for background color.
+
+    const randomColor = ()=>{
+        const hexCodes = "0123456789ABCDEF"
+        let color = "#"
+        for( let i = 0; i < 6; i++){
+           color+= hexCodes[Math.floor(Math.random()*16)] 
+        }
+        return color
+      
+    } ;  
+    // what the change
+    let stopid;
+    const startchangingcolor= function(){
+
+    stopid =    setInterval(changebgcolor,1000)
+
+        function changebgcolor (){
+
+            document.body.style.backgroundColor = randomColor()
+        }
+      
+    };
+    const stopchangingcolor= function(){
+        clearInterval(stopid)
+        stopid = null;
+    };
+    document.querySelector('#start').addEventListener('click',startchangingcolor)
+
+    document.querySelector('#stop').addEventListener('click',stopchangingcolor)
+
+</script>
+</html>
