@@ -1,0 +1,98 @@
+<!--API stands for Application Programming Interface. 
+It's essentially a set of rules and protocols that allow different software applications to communicate with each other.
+ APIs define the methods and data formats that developers can use to request and exchange information between different software components.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> XML HTTP REQUEST</title>
+</head>
+<body style="background-color: #e30404;">
+    <p>XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing.</p>
+    
+    <p>XMLHttpRequest()
+        The constructor initializes an XMLHttpRequest. It must be called before any other method calls.</p>
+
+        <p>XMLHttpRequest: readyState property</p>
+        <p>The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:</p>
+
+        <table border="2">
+            <thead>
+              <tr>
+                <th>Value</th>
+                <th>State</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>0</code></td>
+                <td><code>UNSENT</code></td>
+                <td>Client has been created. <code>open()</code> not called yet.</td>
+              </tr>
+              <tr>
+                <td><code>1</code></td>
+                <td><code>OPENED</code></td>
+                <td><code>open()</code> has been called.</td>
+              </tr>
+              <tr>
+                <td><code>2</code></td>
+                <td><code>HEADERS_RECEIVED</code></td>
+                <td><code>send()</code> has been called, and headers and status are available.</td>
+              </tr>
+              <tr>
+                <td><code>3</code></td>
+                <td><code>LOADING</code></td>
+                <td>Downloading; <code>responseText</code> holds partial data.</td>
+              </tr>
+              <tr>
+                <td><code>4</code></td>
+                <td><code>DONE</code></td>
+                <td>The operation is complete.</td>
+              </tr>
+            </tbody>
+          </table>
+    
+    <script>
+        const url = " https://api.github.com/users/shantanusabyasachi16"
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET',url)
+    xhr.onreadystatechange = ()=>{
+        console.log(xhr.readyState);// onreadystatechange monitors the state change and takes a function to operate
+     
+        if (xhr.readyState===4) {
+      //  console.log(xhr.responseText);// DETAILS WIIL COMES FROM THE RESPONSE
+       //now WE will STORE  =console.log(xhr.responseText) in a variable
+       //****const data = xhr.responseText
+         //console.log(typeof data);//string /// how to convert it into JASON
+        //console.log(data.follower); //undefined
+        
+      
+         //Now we can also access the properties of this API
+            
+            //Now to do that store the retrieved api in a variable
+            
+            //****** NOTE that every API or retrieved data comes up with a string
+            // So we need to convert that data into the object
+            // As we know the data of API is in a JSON format(like an object)
+            // now we will convert the retrieved data as string to the JSON format
+            // to do that we need to use this format
+
+           // how to convert it to  JASON
+             
+           const data = JSON.parse(xhr.responseText)
+           console.log(typeof data);//string
+           console.log(data.followers);// 7 
+           console.log(data.following);//15
+        
+     }
+    }
+    
+    xhr.send()
+
+
+    </script>
+    
+</body>
+</html>
