@@ -1,4 +1,4 @@
-// What is Promise 
+/ What is Promise 
 
 // "Producing code" is code that can take some time
 
@@ -124,11 +124,114 @@ promisefour.then((user)=>{
   .catch((error)=>{
     console.log(error);
     log
-  })
+  }).finally(() =>{ console.log("The promise is either resolved or rejected")})
  // { username1: 'shantanu ' }
  //shantanu
- 
+ // The code in the finally() defines the end message irrespective of the results.
+
+//example = 6
 
 
+// There is another way to execute the program with the promise object
+
+// With the async and await keyword
+
+// These are mostly used like the then() and the catch()
+
+// But it does not have the catch() or similar type of method where it can catch the error
+
+// These are mostly used for the backend responses
+
+// Once the response is there the code will be executed
+
+//diffrence   =
+
+// Promises use .then() and .catch() methods to handle asynchronous operations.
 
 
+// async/await provides a more synchronous style of coding. You use the async keyword before a function declaration to mark it as asynchronous,
+//  and then use the await keyword within the function to pause execution until a promise is resolved.
+
+
+const promo = new Promise(function (resolve,reject){
+    setTimeout(function(){
+        let error = false
+        if (!error) {
+            resolve({username: "javascript", password: "123456"})
+
+        }else{
+            reject("ERROR: js not founded")
+        }
+    },1000)
+
+})
+const ip = async function (){
+    const response = await promo
+    console.log(response);
+
+}
+ip()
+//{ username: 'javascript', password: '123456' }
+
+// there is also another way to catch the error while using async and await
+
+
+const promo1 = new Promise(function (resolve,reject){
+    setTimeout(function(){
+        let error = true
+        if (!error) {
+            resolve({username: "javascript", password: "123456"})
+
+        }else{
+            reject("ERROR: js not founded")
+        }
+    },1000)
+
+})
+const ip1 = async function (){
+    try{
+        const response = await promo1
+        console.log(response);
+    } 
+    catch(error){
+        console.log(error);
+
+    }
+    
+}
+ip1()
+//ERROR: js not founded
+
+///fetch
+//fetch is a modern JavaScript API for making network requests (HTTP requests) in the web browser. 
+//It provides a more powerful and flexible way to fetch resources from a server compared to older techniques like XMLHttpRequest (XHR).
+
+
+//example= 8
+// by async function using try and catch
+async function getdata (){
+   try {
+    const response = await fetch("https://api.github.com/users/shantanusabyasachi16")
+    const data = await response.json()// to convert it into json format as it is instring format
+    console.log(data);
+   } catch (error) {
+    console.log(error);
+   }
+}
+getdata()
+
+//another way using .then and .catch
+
+fetch("https://api.github.com/users/shantanusabyasachi16")
+.then((response)=>{
+    return response.json()
+
+}).then((data)=>{
+    console.log(data);
+
+}).catch((error)=>{
+    console.log(error);
+
+}).finally(()=>{
+    console.log("The data is either fetch or not fetched");
+})
