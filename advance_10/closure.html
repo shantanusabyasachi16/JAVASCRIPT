@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">one</button>
+    <button id="btn2">two</button>
+    <script>
+         function Change(color){
+
+function realChange(){
+          document.body.style.backgroundColor = `${color}`;
+        }
+      
+        return realChange  //closure
+}
+
+document.querySelector("#btn1").onclick = Change("red")
+document.querySelector("#btn2").onclick = Change("blue")
+    </script>
+   
+    
+</body>
+</html>
