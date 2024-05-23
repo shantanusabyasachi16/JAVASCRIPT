@@ -1,0 +1,27 @@
+/*In JavaScript, the bind() method is used to create a new function that, when called, has this keyword set to a specific value. It allows you to explicitly specify the value that should be used as this when a function is invoked.*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button id="btn">button is clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library = "react"
+            this.server = "http://localhost:900";
+            document.querySelector('#btn').addEventListener('click',this.clickedd.bind(this))
+        
+        }
+        clickedd(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+
+    }
+</script>
+</html>
